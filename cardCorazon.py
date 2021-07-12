@@ -2,12 +2,12 @@ import cv2
 import numpy as np
 
 
-image = cv2.imread("images/Corazones/siete.png")
+image = cv2.imread("images/Corazones/cinco.png")
 image_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 template1 = cv2.imread("images/Corazones/corazon.png", 0)
 def puntosTemplate(image, template):
     points = []
-    threshold = 0.9
+    threshold = 0.85
 
     res = cv2.matchTemplate(image, template, cv2.TM_CCOEFF_NORMED)
     candidates = np.where(res >= threshold)
